@@ -12,5 +12,6 @@ public interface LabourerService
 	public Labourer getLabourer(int labourerId);
 	
 	public void deleteLabourer(int labourerId);
-
+	
+	public void validateData(String fieldValue, String regex,String fieldName);
 }

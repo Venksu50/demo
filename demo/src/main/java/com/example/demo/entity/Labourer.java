@@ -56,13 +56,11 @@ public class Labourer
 	
 	@NotNull
 	@Column(name="permanent_address_pin_code")
-	@Pattern(regexp="^[1-9][0-9]{5}$")
-	private String permanentAddressPinCode;
+	private int permanentAddressPinCode;
 	
 	@NotNull
 	@Column(name="adhaar_no")
-	@Pattern(regexp="[0-9]{12}")
-	private String aadharNumber;
+	private long aadharNumber;
 	
 	@NotNull
 	@Pattern(regexp="[A-Z]{5}[0-9]{4}[A-Z]{1}")
@@ -70,19 +68,16 @@ public class Labourer
 	private String panNum;
 	
 	@NotNull
-	@Pattern(regexp="[0-9]{1,2}")
 	@Column(name="skill_1")
-	private String skill_1;
+	private int skill_1;
 	
 	@NotNull
-	@Pattern(regexp="[0-9]{1,2}")
 	@Column(name="skill_2")
-	private String skill_2;
+	private int skill_2;
 	
 	@NotNull
-	@Pattern(regexp="[0-9]{1,2}")
 	@Column(name="skill_3")
-	private String skill_3;
+	private int skill_3;
 	
 	@NotNull
 	@Column(name="active_status")
@@ -94,7 +89,7 @@ public class Labourer
 	
 	@NotNull
 	@Column(name="phone_number")
-	private String phoneNum;
+	private long phoneNum;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="creation_date")
@@ -110,9 +105,9 @@ public class Labourer
 	}
 
 	public Labourer(String firstName, String lastName, Date dateOfBirth, String permanentAddress,
-			String permanentAddressCity, String permanentAddressState, String permanentAddressPinCode, String aadharNumber,
-			String panNum, String skill_1, String skill_2, String skill_3, boolean activeStatus, boolean currentlyEmployed,
-			String phoneNum, Date creationDate, Date lastModifiedDate) {
+			String permanentAddressCity, String permanentAddressState, int permanentAddressPinCode, long aadharNumber,
+			String panNum, int skill_1, int skill_2, int skill_3, boolean activeStatus, boolean currentlyEmployed,
+			long phoneNum, Date creationDate, Date lastModifiedDate) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
@@ -188,19 +183,19 @@ public class Labourer
 		this.permanentAddressState = permanentAddressState;
 	}
 
-	public String getPermanentAddressPinCode() {
+	public int getPermanentAddressPinCode() {
 		return permanentAddressPinCode;
 	}
 
-	public void setPermanentAddressPinCode(String permanentAddressPinCode) {
+	public void setPermanentAddressPinCode(int permanentAddressPinCode) {
 		this.permanentAddressPinCode = permanentAddressPinCode;
 	}
 
-	public String getAadharNumber() {
+	public long getAadharNumber() {
 		return aadharNumber;
 	}
 
-	public void setAadharNumber(String aadharNumber) {
+	public void setAadharNumber(long aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
 
@@ -212,27 +207,27 @@ public class Labourer
 		this.panNum = panNum;
 	}
 
-	public String getSkill_1() {
+	public int getSkill_1() {
 		return skill_1;
 	}
 
-	public void setSkill_1(String skill_1) {
+	public void setSkill_1(int skill_1) {
 		this.skill_1 = skill_1;
 	}
 
-	public String getSkill_2() {
+	public int getSkill_2() {
 		return skill_2;
 	}
 
-	public void setSkill_2(String skill_2) {
+	public void setSkill_2(int skill_2) {
 		this.skill_2 = skill_2;
 	}
 
-	public String getSkill_3() {
+	public int getSkill_3() {
 		return skill_3;
 	}
 
-	public void setSkill_3(String skill_3) {
+	public void setSkill_3(int skill_3) {
 		this.skill_3 = skill_3;
 	}
 
@@ -252,11 +247,11 @@ public class Labourer
 		this.currentlyEmployed = currentlyEmployed;
 	}
 
-	public String getPhoneNum() {
+	public long getPhoneNum() {
 		return phoneNum;
 	}
 
-	public void setPhoneNum(String phoneNum) {
+	public void setPhoneNum(long phoneNum) {
 		this.phoneNum = phoneNum;
 	}
 
